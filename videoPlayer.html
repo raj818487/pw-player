@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-9293714524669361">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+
+</head>
+<body>
+    <!-- Content specific to the Video Player section -->
+    <div class="container clearfix" id="videoPlayerSection" >
+        <div class="right-section">
+            <h1>Video Player</h1>
+            <div class="input-container">
+                <label for="videoUrl">Enter the video URL:</label>
+                <input type="text" id="videoUrl" placeholder="Enter the video URL">
+            </div>
+            <button id="loadButton" onclick="loadVideo()">Load Video</button>
+            <video id="video" controls></video>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 . All rights reserved. | <a href="https://t.me/pwvideoplayer">@pwvideoplayer</a></p>
+    </footer>
+
+    <script>
+        function loadVideo() {
+            const videoUrlInput = document.getElementById('videoUrl');
+            const video = document.getElementById('video');
+            const url = videoUrlInput.value.trim();
+        
+            if (url) {
+                if (Hls.isSupported()) {
+                    const hls = new Hls();
+                    hls.loadSource(url);
+                    hls.attachMedia(video);
+                    hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                        video.play();
+                    });
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = url;
+                    video.addEventListener('loadedmetadata', function () {
+                        video.play();
+                    });
+                } else {
+                    alert('HLS is not supported on this browser.');
+                }
+            } else {
+                alert('Please enter a valid video URL.');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoElement = document.getElementById('video');
+            const player = new Plyr(videoElement, {
+                // Additional Plyr customization options can be added here
+                controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
+            });
+
+            // If you want to play the video automatically when the page loads
+            // player.play();
+        });
+    </script>
+    <!-- Include the JavaScript and CSS files -->
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <!-- Include your scripts here if needed -->
+</body>
+</html>

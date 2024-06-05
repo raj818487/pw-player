@@ -1,0 +1,162 @@
+.toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 0 auto; /* Add this line to center the button */
+    display: block; /* This line is already present in your original code */
+}
+
+.toggle-button:hover {
+    background-color: #2980b9;
+}
+
+.toggle-button.active {
+    background-color: #2ecc71;
+}
+
+
+
+/* Styles for the navigation bar */
+.navbar {
+    
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Styles for container and sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.left-section,
+.right-section {
+
+    box-sizing: border-box;
+    padding: 20px;
+    width: 50%;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.clear-button,
+.copy-button,
+#loadButton {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-button:hover,
+.copy-button:hover,
+#loadButton:hover {
+    background-color: #0056b3;
+}
+
+.quality-links {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.quality-header {
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    display: block;
+    background-color: transparent;
+    color: #007bff;
+}
+
+.quality-link {
+    display: block;
+    margin-bottom: 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.quality-link:hover {
+    text-decoration: underline;
+}
+
+.tme {
+    color: #00d1bc !important;
+    text-decoration: underline;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Clearfix for float elements */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.plyr {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}

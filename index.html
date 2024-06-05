@@ -1,0 +1,98 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-adsense-account" content="ca-pub-9293714524669361" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Modifier & Video Player</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9293714524669361"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Toggle button to switch between sections -->
+    <div class="button-container">
+      <button class="toggle-button" onclick="toggleSection()">
+        Toggle Sections
+      </button>
+    </div>
+
+    <!-- Navigation bar containing URL Modifier, Video Player, and DRM Player options -->
+    <div class="navbar">
+      <a href="urlModifier.html" class="active">URL Modifier</a>
+      <a href="videoPlayer.html">Video Player</a>
+      <a href="privacyPolicy.html">Privacy Policy</a>
+    </div>
+
+    <!-- Sections for URL Modifier, Video Player, and DRM Player -->
+    <div class="container clearfix" id="urlModifierSection">
+      <div class="left-section">
+        <h1>URL Modifier</h1>
+        <div class="input-container">
+          <label for="originalUrl">Enter the original URL:</label>
+          <input
+            type="text"
+            id="originalUrl"
+            placeholder="Enter the original URL"
+          />
+          <button class="clear-button" onclick="clearInput()">Clear</button>
+        </div>
+        <button class="copy-button" onclick="generateQualityLinks()">
+          Modify URL
+        </button>
+        <div class="quality-links" id="qualityLinks"></div>
+      </div>
+    </div>
+
+    <div
+      class="container clearfix"
+      id="videoPlayerSection"
+      style="display: none"
+    >
+      <div class="right-section">
+        <h1>Video Player</h1>
+        <div class="input-container">
+          <label for="videoUrl">Enter the video URL:</label>
+          <input type="text" id="videoUrl" placeholder="Enter the video URL" />
+        </div>
+        <button id="loadButton" onclick="loadVideo()">Load Video</button>
+        <video id="video" controls></video>
+      </div>
+    </div>
+    <div
+      class="container clearfix"
+      id="privacyPolicySection"
+      style="display: none"
+    >
+      <div class="right-section">
+        <h1>Privacy Policy</h1>
+        <!-- Add your Privacy Policy content here -->
+        <p>This is the Privacy Policy content.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2024 . All rights reserved. |
+        <a href="https://t.me/pwvideoplayer">@pwvideoplayer</a>
+      </p>
+    </footer>
+
+    <!-- Include the JavaScript and CSS files -->
+    <script
+      disable-devtool-auto
+      src="https://cdn.jsdelivr.net/npm/disable-devtool"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+  </body>
+</html>
