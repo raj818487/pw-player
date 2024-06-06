@@ -154,10 +154,11 @@ function generateModifiedUrl(originalUrl, quality) {
   const extractedPart = extractPartFromUrl(originalUrl);
 
   if (extractedPart) {
-    return `https://pw.jarviss.workers.dev?v=https://penpencilvod.pc.cdn.bitgravity.com/${extractedPart}/master.m3u8&quality=${quality}`;
+    return `https://pwjarvis.vercel.app?v=${extractedPart}&quality=${quality}`;
   } else {
     return "Invalid URL format. Please enter a valid URL.";
   }
+  // https://pwjarvis.vercel.app?v=72ee27ed-f72a-4d29-803e-94d2b91d1478&quality=480
   // https://pw.jarviss.workers.dev?v=https://penpencilvod.pc.cdn.bitgravity.com/1f471db9-e8fa-4a3d-bdef-5674083ff3fd/master.m3u8&quality=720
   //   https://penpencilvod.pc.cdn.bitgravity.com/a529ed2e-28cb-4d6e-bc13-1676c438d58a/hls/480/main.m3u8
 }
